@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import 'home/dio/dio_binding.dart';
+import 'home/dio/dio_page.dart';
 import 'home/get_connect/get_connect_bindings.dart';
 import 'home/get_connect/get_connect_page.dart';
 import 'home/home_bindings.dart';
@@ -32,6 +34,11 @@ class MyApp extends StatelessWidget {
               name: '/getconnect',
               page: () => GetConnectPage(),
               binding: GetConnectBinding(),
+            ),
+            GetPage(
+              name: '/dio',
+              page: () => DioPage(),
+              binding: DioBinding(),
             ),
           ],
         ),
