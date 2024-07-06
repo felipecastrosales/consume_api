@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import 'package:consume_api/repository/i_user_repository.dart';
@@ -26,7 +27,7 @@ class HttpController extends GetxController with StateMixin {
         status: RxStatus.success(),
       );
     } catch (e) {
-      print(e);
+      debugPrint('Error to search users: $e');
       change(
         [],
         status: RxStatus.error('Error to search users'),

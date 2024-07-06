@@ -6,13 +6,13 @@ import 'package:consume_api/model/user_model.dart';
 import 'package:consume_api/home/dio/dio_controller.dart';
 
 class DioPage extends GetView<DioController> {
-  const DioPage({Key? key}) : super(key: key);
+  const DioPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('API | Access Guide'),
+        title: const Text('API | Access Guide'),
         centerTitle: true,
       ),
       body: controller.obx(
@@ -23,11 +23,11 @@ class DioPage extends GetView<DioController> {
               final UserModel item = state[index];
               return ListTile(
                 title: item.name == ''
-                  ? Text('Without name')
-                  : Text(item.name),
-                subtitle: item.userTypes!.length == 0
-                  ? Text('Without length')
-                  : Text('Types length: ${item.userTypes!.length}'),
+                    ? const Text('Without name')
+                    : Text(item.name),
+                subtitle: item.userTypes!.isEmpty
+                    ? const Text('Without length')
+                    : Text('Types length: ${item.userTypes!.length}'),
               );
             },
           );
@@ -41,7 +41,7 @@ class DioPage extends GetView<DioController> {
                 Text(error!),
                 TextButton(
                   onPressed: () => controller.findUsers(),
-                  child: Text('Search again!'),
+                  child: const Text('Search again!'),
                 ),
               ],
             ),
