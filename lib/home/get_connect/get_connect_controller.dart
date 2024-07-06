@@ -1,8 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import 'package:consume_api/repository/i_user_repository.dart';
 
-class GetConnectController extends GetxController with StateMixin { 
+class GetConnectController extends GetxController with StateMixin {
   GetConnectController(this._getConnectRepository);
   final IUserRepository _getConnectRepository;
 
@@ -25,7 +26,7 @@ class GetConnectController extends GetxController with StateMixin {
         status: RxStatus.success(),
       );
     } catch (e) {
-      print(e);
+      debugPrint('Error to find users: $e');
       change(
         [],
         status: RxStatus.error('Error to search users'),

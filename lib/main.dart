@@ -12,32 +12,34 @@ import 'home/http/http_binding.dart';
 import 'home/http/http_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       getPages: [
         GetPage(
           name: '/',
-          page: () => HomePage(),
+          page: () => const HomePage(),
           binding: HomeBindings(),
           children: [
             GetPage(
               name: '/http',
-              page: () => HttpPage(),
+              page: () => const HttpPage(),
               binding: HttpBinding(),
             ),
             GetPage(
               name: '/getconnect',
-              page: () => GetConnectPage(),
+              page: () => const GetConnectPage(),
               binding: GetConnectBinding(),
             ),
             GetPage(
               name: '/dio',
-              page: () => DioPage(),
+              page: () => const DioPage(),
               binding: DioBinding(),
             ),
           ],

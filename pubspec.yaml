@@ -1,20 +1,20 @@
 name: consume_api
 description: Consumindo API com Flutter.
 publish_to: 'none'
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
-  cupertino_icons: ^1.0.2
-  dio: ^4.0.0
+  dio: ^5.5.0+1
   flutter:
     sdk: flutter
-  get: ^4.3.8
-  http: ^0.13.3
+  get: ^4.6.6
+  http: ^1.2.1
 
 dev_dependencies:
+  flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
 

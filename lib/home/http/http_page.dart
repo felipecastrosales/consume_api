@@ -6,13 +6,13 @@ import 'http_controller.dart';
 import 'package:consume_api/model/user_model.dart';
 
 class HttpPage extends GetView<HttpController> {
-  const HttpPage({Key? key}) : super(key: key);
+  const HttpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('API | Access Guide'),
+        title: const Text('API | Access Guide'),
         centerTitle: true,
       ),
       body: controller.obx(
@@ -23,11 +23,11 @@ class HttpPage extends GetView<HttpController> {
               final UserModel item = state[index];
               return ListTile(
                 title: item.name == ''
-                  ? Text('Without name')
-                  : Text(item.name),
-                subtitle: item.userTypes!.length == 0
-                  ? Text('Without length')
-                  : Text('Types length: ${item.userTypes!.length}'),
+                    ? const Text('Without name')
+                    : Text(item.name),
+                subtitle: item.userTypes!.isEmpty
+                    ? const Text('Without length')
+                    : Text('Types length: ${item.userTypes!.length}'),
               );
             },
           );
@@ -41,7 +41,7 @@ class HttpPage extends GetView<HttpController> {
                 Text(error!),
                 TextButton(
                   onPressed: () => controller.findUsers(),
-                  child: Text('Search again!'),
+                  child: const Text('Search again!'),
                 ),
               ],
             ),
